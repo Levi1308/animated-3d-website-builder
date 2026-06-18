@@ -1,8 +1,8 @@
 # Animated 3D Website Builder
 
-A reusable Claude/Codex-style skill for building premium animated websites with modern motion design and lightweight 3D interaction.
+A reusable Claude/Codex-style skill for building premium animated, full-screen web experiences with React, TypeScript, Vite or Next.js, Tailwind CSS, Framer Motion, React Three Fiber, Drei, video, canvas, masks, scroll choreography, and pointer-driven interaction.
 
-Use it for animated landing pages, React/Next.js hero sections, Framer Motion interactions, React Three Fiber scenes, scroll-based effects, SaaS/product pages, portfolios, and frontend redesigns that need to feel high-end without becoming fragile or slow.
+Use it for cinematic landing pages, brand websites, editorial heroes, cursor-following reveals, fullscreen video experiences, scroll-controlled video/canvas pages, lightweight 3D heroes, premium mobile menus, and high-end frontend redesigns.
 
 ## How to Use
 
@@ -11,14 +11,14 @@ Use it for animated landing pages, React/Next.js hero sections, Framer Motion in
 Place this folder where your Claude Code skill system can load custom skills, then invoke it naturally:
 
 ```text
-Use the animated-3d-website-builder skill to build a premium animated SaaS landing page.
+Use the animated-3d-website-builder skill to build a Lithos-style geology hero with a cursor spotlight reveal.
 ```
 
-The trigger metadata lives in `SKILL.md`; the practical coding-agent guidance lives in `AGENTS.md`.
+The trigger metadata and core workflow live in `SKILL.md`. Reusable implementation guidance lives in `references/`.
 
 ### Codex-Style Agents
 
-Use `AGENTS.md` as repository or task instructions for Codex-style coding agents. Put it at the project root, or keep this package intact and tell the agent to read it before implementing animation or 3D website work.
+Use `AGENTS.md` as repository or task instructions for Codex-style coding agents. Put it at the project root, or keep this package intact and tell the agent to read it before implementing animation, 3D, video, canvas, mask, or premium frontend work.
 
 Recommended structure:
 
@@ -29,18 +29,18 @@ animated-3d-website-builder/
 ├── README.md
 ├── references/
 │   ├── checklist.md
+│   ├── gold-standard-recipes.md
 │   └── patterns.md
 └── examples/
     └── prompts.md
 ```
 
-## Example Prompts
+## Reference Files
 
-1. Build a cinematic SaaS landing page for an AI analytics product with a premium animated hero, product sections, pricing CTA, and responsive layout.
-2. Add a 3D animated hero section to this Next.js homepage using React Three Fiber and Drei, with a reduced-motion fallback.
-3. Improve this existing boring landing page so it feels premium, animated, and conversion-focused without adding unnecessary dependencies.
-4. Add scroll-triggered animations to the product showcase and feature sections using Framer Motion, keeping mobile performance clean.
-5. Create a portfolio homepage with interactive 3D visuals, smooth section transitions, and accessible keyboard-friendly project cards.
+- `references/patterns.md`: compact implementation patterns for cursor reveals, video heroes, mobile overlays, staggered motion, scroll video/canvas, particles, mask cards, 3D heroes, and exact-spec mode.
+- `references/gold-standard-recipes.md`: reusable guidance for Lithos, VANGUARD, and Veldara-style experiences.
+- `references/checklist.md`: final quality, accessibility, responsiveness, performance, and validation checklist.
+- `examples/prompts.md`: example tasks that represent the intended quality bar.
 
 ## Packaging
 
@@ -49,4 +49,3 @@ From the parent directory, package the skill with:
 ```bash
 zip -r animated-3d-website-builder.zip animated-3d-website-builder
 ```
-

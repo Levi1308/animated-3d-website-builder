@@ -2,59 +2,82 @@
 
 ## Visual Quality
 
-- First viewport communicates the product, brand, person, or offer immediately.
-- Typography scale is appropriate for the layout and does not overflow.
-- Spacing is intentional on mobile and desktop.
-- The palette is not a generic one-note gradient theme.
-- CTAs are visible, specific, and easy to scan.
+- Does the first viewport feel premium and intentional?
+- Is there a clear hero focal point?
+- Are typography, spacing, contrast, and hierarchy strong?
+- Does the page avoid generic template energy?
+- Is the brand, product, person, place, or offer immediately legible?
+- Are hover and focus states polished?
+- Are image, video, canvas, and 3D layers composed with clear z-index strategy?
 
 ## Motion Quality
 
-- Animations have clear purpose and do not delay important content.
-- Motion uses transform and opacity where possible.
-- Staggers are short and restrained.
-- Continuous motion is subtle and can be reduced.
-- No competing animations fight for attention.
+- Are animations staggered and purposeful?
+- Does each animation orient, reveal, focus, respond, or connect space?
+- Are transitions smooth on mobile?
+- Is reduced motion respected in CSS and JavaScript?
+- Are transform and opacity used where possible?
+- Do continuous animations avoid distracting from content?
+- Are pointer and scroll interactions free of visible jitter?
 
-## 3D Performance
+## Advanced Interaction Quality
 
-- Canvas has a stable size and never renders blank.
-- DPR is capped.
-- Heavy assets are avoided or lazy-loaded.
-- `useFrame` work is minimal.
-- Mobile scene complexity is reduced when needed.
-- A loading and reduced-motion fallback exists.
+- Cursor reveal works and cleans up listeners.
+- RAF loops are canceled on unmount.
+- Video background fills the viewport with a poster or static fallback.
+- Scroll effects do not jank.
+- Canvas effects resize correctly and account for DPR.
+- Mask effects work in Chromium and Safari via `maskImage` plus `WebkitMaskImage`.
+- Particles or canvas overlays use `pointer-events: none` unless interactive.
+- Fixed scroll cards only accept pointer events when visible.
 
-## Mobile Behavior
+## Responsiveness
 
-- Layout works at narrow widths without horizontal overflow.
-- Touch interactions do not depend on hover.
-- Text, buttons, cards, and canvas elements do not overlap.
-- Hero height leaves a hint of the next section where appropriate.
-- Performance remains smooth on mobile.
+- Works at mobile, tablet, and desktop widths.
+- No horizontal overflow.
+- Hero uses `100dvh` or equivalent where appropriate.
+- Nav switches correctly at breakpoints.
+- CTA and stats rows wrap safely.
+- Text, buttons, cards, videos, canvases, and 3D containers do not overlap.
+- Touch users can access all critical content without hover.
 
 ## Accessibility
 
 - Headings are ordered and meaningful.
-- Interactive elements are real links or buttons.
-- Focus states are visible.
-- Text contrast is readable over motion and canvas layers.
-- Critical content is available outside canvas.
-- `prefers-reduced-motion` is respected.
+- Buttons and links are semantic.
+- Icon-only buttons have accessible labels.
+- Text contrast is sufficient over image, video, canvas, and gradients.
+- Decorative video/canvas/3D does not trap interaction.
+- Critical copy is in DOM text.
+- Mobile menu is keyboard-friendly where practical.
+- Motion respects `prefers-reduced-motion`.
 
-## Build Health
+## Performance
 
-- Lint passes or failures are reported.
-- Typecheck passes or failures are reported.
-- Build passes or failures are reported.
-- Browser console is checked when visual work was implemented.
-- Hydration and SSR issues are addressed.
+- Unnecessary dependencies were avoided.
+- Heavy 3D is avoided unless needed.
+- Procedural 3D is lightweight and DPR is capped.
+- Canvas work is bounded and cleaned up.
+- Video has fallback behavior and mobile performance considerations.
+- Images and media are optimized for the framework.
+- Pointer and scroll work uses refs, motion values, or RAF rather than broad React state.
+- Build passes.
 
-## Dependency Sanity
+## Code Quality
 
-- Existing libraries are reused.
-- New dependencies are necessary and explained.
-- GSAP is only used for complex timelines.
-- shadcn/ui is only used when useful or already present.
-- No heavy asset or animation package is added for a small effect.
+- TypeScript is clean.
+- Components are readable and cohesive.
+- No unused imports, dead code, or unfinished placeholder notes.
+- No routing changes unless requested.
+- File structure follows the existing app.
+- Exact user-provided classes, URLs, text, z-indexes, and timings are preserved unless impossible.
+- Single-component output is allowed when the user asks for it or the app is small.
 
+## Validation
+
+- `npm run lint` ran or the missing script was reported.
+- `npm run typecheck` ran or the missing script was reported.
+- Tests ran when available.
+- `npm run build` ran or the closest framework validation ran.
+- Browser console was checked for visual work when feasible.
+- Hydration, blank canvas, layout overlap, and mobile overflow issues were addressed.
